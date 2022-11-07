@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/mainActivityFragment">
+
+    <fragment
+        android:id="@+id/mainActivityFragment"
+        android:name="com.example.homework4.MainActivityFragment"
+        android:label="fragment_main_activity"
+        tools:layout="@layout/fragment_main_activity" >
+        <action
+            android:id="@+id/toA"
+            app:destination="@id/screenAFragment" />
+        <action
+            android:id="@+id/toX"
+            app:destination="@id/screenXFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/screenAFragment"
+        android:name="com.example.homework4.ScreenAFragment"
+        android:label="fragment_screen_a"
+        tools:layout="@layout/fragment_screen_a" >
+        <action
+            android:id="@+id/toB"
+            app:destination="@id/screenBFragment"
+            app:popUpTo="@id/screenAFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/screenXFragment"
+        android:name="com.example.homework4.ScreenXFragment"
+        android:label="fragment_screen_x"
+        tools:layout="@layout/fragment_screen_x" >
+        <action
+            android:id="@+id/toY2"
+            app:destination="@id/screenYFragment"
+            app:popUpTo="@id/screenXFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/screenBFragment"
+        android:name="com.example.homework4.ScreenBFragment"
+        android:label="fragment_screen_b"
+        tools:layout="@layout/fragment_screen_b" >
+        <action
+            android:id="@+id/toY"
+            app:destination="@id/screenYFragment"
+            app:popUpTo="@id/screenBFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/screenYFragment"
+        android:name="com.example.homework4.ScreenYFragment"
+        android:label="fragment_screen_y"
+        tools:layout="@layout/fragment_screen_y" />
+</navigation>
